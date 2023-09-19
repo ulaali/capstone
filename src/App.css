@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul{
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul li{
+  padding: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Link{
+  text-decoration: none;
+  color: #333333;
+}
+nav button{
+  background-color: #F4CE14;
+  padding: 10px 15px;
+  color: #333333;
+  border: none;
+  border-radius: 8px;
+}
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 25px;
+  color: white;
+  background-color: #333333;
+  height: 300px;
+}
+.hero h1{
+  font-size: 2.8rem;
+}
+.hero button{
+  background-color: #F4CE14;
+  padding: 10px 15px;
+  color: #333333;
+  border: none;
+  border-radius: 8px;
+}
+.specials {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  row-gap: 20px;
+  color: #333333;
+}
+.special{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  column-gap: 650px;
+}
+.specials button{
+  background-color: #F4CE14;
+  padding: 10px 15px;
+  color: #333333;
+  border: none;
+  border-radius: 8px;
+}
+.specials h1{
+  font-size: 2.8rem;
+}
+.testmonial{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
+  background-color: #333333;
+  margin-top: 100px;
+  height: 500px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Cards{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  column-gap: 20px;
 }
