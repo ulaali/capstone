@@ -14,7 +14,7 @@ export default function Navbar() {
             <li><Link to='/reservation' className='Link'>Reservation</Link></li>
             <li><Link to='/order' className='Link'>Order online</Link></li>
         </ul>
-        <button>Log in</button>
+        <Link to='login'><button>Log in</button></Link>
      </nav>
     </>
   )

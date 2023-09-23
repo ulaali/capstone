@@ -89,3 +89,49 @@ nav button{
   justify-content: center;
   column-gap: 20px;
 }
+
+.booking{
+  background-image: url('./assets/icons_assets/restaurant.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.booking input{
+ padding: 10px;
+ background-color: transparent;
+ border-radius: 5px;
+ border: 1px solid #ccc;
+ color: white;
+
+}
+.booking select{
+  padding: 10px;
+ background-color: transparent;
+ border-radius: 5px;
+ border: 1px solid #ccc;
+ color: white;
+ background-color: #333333;
+}
+.booking button{
+  padding: 15px;
+  background-color: white;
+  color: #333333;
+  border-radius: 10px;
+  border: none;
+}
+.booking label{
+  color: #F4CE14;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.forrm{
+  background-color: #333333;
+  padding: 10px;
+  width: 100%; 
+  border-radius: 10px; 
+}

@@ -12,10 +12,17 @@ import img2 from "../assets/icons_assets/bruchetta.svg";
 import img3 from "../assets/icons_assets/lemon dessert.jpg";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+import { Link} from "react-router-dom";
+import { useContext } from 'react';
+import Context  from '../Data';
+
+
+
 
 export default function Main() {
-  const [value, setValue] = useState(2);
+  const Data = useContext(Context);
 
+  const [value, setValue] = useState(2);
   return (
     <>
       <section className="hero">
@@ -29,7 +36,7 @@ export default function Main() {
             <br /> veritatis expedita numquam optio perferendis!
           </p>
           <br />
-          <button>Resrve a table</button>
+          <Link to='/reservation' ><button>Resrve a table</button></Link>
         </div>
         <img
           src={hero}
@@ -60,7 +67,7 @@ export default function Main() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Order</Button>
+              <Button size="small">Order <button onClick={Data.increament} id="add">+</button><p id="order">{Data.order}</p><button onClick={Data.decreament}>-</button></Button>
             </CardActions>
           </Card>
           <Card sx={{ maxWidth: 345 }}>
@@ -80,7 +87,7 @@ export default function Main() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Order</Button>
+              <Button size="small">Order <button onClick={Data.increament}>+</button>{Data.order}<button onClick={Data.decreament}>-</button></Button>
             </CardActions>
           </Card>
           <Card sx={{ maxWidth: 345 }}>
@@ -100,7 +107,7 @@ export default function Main() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Order</Button>
+              <Button size="small">Order <button onClick={Data.increament}>+</button>{Data.order}<button onClick={Data.decreament}>-</button></Button>
             </CardActions>
           </Card>
         </div>
