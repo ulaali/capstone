@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import Context from "../Data";
 import * as Yup from "yup";
-import { Formik, Field, Form } from "formik";
+import { Formik } from "formik";
 
 const validationSchema = Yup.object().shape({
   date: Yup.date().required("this feild is required"),
@@ -12,10 +12,8 @@ const validationSchema = Yup.object().shape({
 
 export default function BookingForm() {
   const data = useContext(Context);
-
-  const [date, setDate] = useState("");
+  
   const [time, setTime] = useState("");
-  const [guests, setGuests] = useState("");
   const [occas, setOccas] = useState("");
   return (
     <div className="booking">
@@ -60,7 +58,7 @@ export default function BookingForm() {
                 19:00 {data.availalbe["19:00"] ? "available" : "not available"}
               </option>
               <option>
-                20:00 {data.availalbe["20:00"] ? "available" : "not available"}
+                20:00 {data.availalbe["20:00"] ? "available": "not available"}
               </option>
               <option>
                 21:00 {data.availalbe["21:00"] ? "available" : "not available"}{" "}

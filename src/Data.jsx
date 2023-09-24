@@ -1,10 +1,11 @@
 import React,{useState,createContext} from 'react'
 
 
-
 const Context = createContext();
 
+
 export function Data({children}) {
+ 
     const [availalbe, setAvailalbe] = useState({
         '17:00':true,
         '18:00':false,

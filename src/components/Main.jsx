@@ -12,31 +12,46 @@ import img2 from "../assets/icons_assets/bruchetta.svg";
 import img3 from "../assets/icons_assets/lemon dessert.jpg";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-import { Link} from "react-router-dom";
-import { useContext } from 'react';
-import Context  from '../Data';
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import Context from "../Data";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
+import Slide from "@mui/material/Slide";
+import Avatar from '@mui/material/Avatar';
 
-
-
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 export default function Main() {
   const Data = useContext(Context);
-
   const [value, setValue] = useState(2);
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <section className="hero">
         <div>
           <h1>Little Lemon</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            ullam, ipsa <br />
-            laudantium quisquam amet eum illo velit reprehenderit ut earum at,
-            <br /> similique magnam voluptatem nostrum
-            <br /> veritatis expedita numquam optio perferendis!
+            Little lemon is restauranfood takes chiefs from diiferent background to delivery <br/>varity of foods and experiences, little lemon offfers food delivery<br/> and booking table services too.
           </p>
           <br />
-          <Link to='/reservation' ><button>Resrve a table</button></Link>
+          <Link to="/reservation">
+            <button>Resrve a table</button>
+          </Link>
         </div>
         <img
           src={hero}
@@ -67,8 +82,36 @@ export default function Main() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Order <button onClick={Data.increament} id="add">+</button><p id="order">{Data.order}</p><button onClick={Data.decreament}>-</button></Button>
+              <Button variant="outlined" onClick={handleClickOpen}>
+                Order
+              </Button>
             </CardActions>
+            <Dialog
+              open={open}
+              TransitionComponent={Transition}
+              keepMounted
+              onClose={handleClose}
+              aria-describedby="alert-dialog-slide-description"
+            >
+              <DialogTitle>{"Order"}</DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-slide-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                  rerum eligendi aliquam pariatur amet fugit velit, qui
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Close</Button>
+                <Button size="small">
+                  Order{"    "}
+                  <button onClick={Data.increament} id="add">
+                    +
+                  </button>
+                  <p id="order">{Data.order}</p>
+                  <button onClick={Data.decreament}>-</button>
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Card>
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
@@ -87,8 +130,36 @@ export default function Main() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Order <button onClick={Data.increament}>+</button>{Data.order}<button onClick={Data.decreament}>-</button></Button>
+              <Button variant="outlined" onClick={handleClickOpen}>
+                Order
+              </Button>
             </CardActions>
+            <Dialog
+              open={open}
+              TransitionComponent={Transition}
+              keepMounted
+              onClose={handleClose}
+              aria-describedby="alert-dialog-slide-description"
+            >
+              <DialogTitle>{"Order"}</DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-slide-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                  rerum eligendi aliquam pariatur amet fugit velit, qui
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Close</Button>
+                <Button size="small">
+                  Order{"   "}
+                  <button onClick={Data.increament} id="add">
+                    +
+                  </button>
+                  <p id="order">{Data.order}</p>
+                  <button onClick={Data.decreament}>-</button>
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Card>
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
@@ -107,8 +178,37 @@ export default function Main() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Order <button onClick={Data.increament}>+</button>{Data.order}<button onClick={Data.decreament}>-</button></Button>
+              
+              <Button variant="outlined" onClick={handleClickOpen}>
+                Order
+              </Button>
             </CardActions>
+            <Dialog
+              open={open}
+              TransitionComponent={Transition}
+              keepMounted
+              onClose={handleClose}
+              aria-describedby="alert-dialog-slide-description"
+            >
+              <DialogTitle>{"Order"}</DialogTitle>
+              <DialogContent>
+                <DialogContentText id="alert-dialog-slide-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                  rerum eligendi aliquam pariatur amet fugit velit, qui
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={handleClose}>Close</Button>
+                <Button size="small">
+                  Order{"   "}
+                  <button onClick={Data.increament} id="add">
+                    +
+                  </button>
+                  <p id="order">{Data.order}</p>
+                  <button onClick={Data.decreament}>-</button>
+                </Button>
+              </DialogActions>
+            </Dialog>
           </Card>
         </div>
       </section>
@@ -120,8 +220,7 @@ export default function Main() {
               sx={{
                 "& > legend": { mt: 2 },
               }}
-              style={{padding:'10px'}}
-
+              style={{ padding: "10px" }}
             >
               <Rating
                 name="simple-controlled"
@@ -133,11 +232,10 @@ export default function Main() {
             </Box>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Costumer
+              <Avatar alt="Memy Sharp" src="/static/images/avatar/1.jpg" />Mariam
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                rerum eligendi aliquam pariatur amet fugit velit, qui
+                great idea to do reserve a table page really needed it as a manager , like the food too, tasty
               </Typography>
             </CardContent>
           </Card>
@@ -146,8 +244,7 @@ export default function Main() {
               sx={{
                 "& > legend": { mt: 2 },
               }}
-              style={{padding:'10px'}}
-
+              style={{ padding: "10px" }}
             >
               <Rating
                 name="simple-controlled"
@@ -155,16 +252,15 @@ export default function Main() {
                 onChange={(event, newValue) => {
                   setValue(newValue);
                 }}
-
               />
             </Box>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Costumer
+              <Avatar alt="Semy Sharp" src="/static/images/avatar/1.jpg" />Sarah
+
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                rerum eligendi aliquam pariatur amet fugit velit, qui
+                great food, great servises, great website, love it
               </Typography>
             </CardContent>
           </Card>
@@ -173,8 +269,7 @@ export default function Main() {
               sx={{
                 "& > legend": { mt: 2 },
               }}
-              style={{padding:'10px'}}
-
+              style={{ padding: "10px" }}
             >
               <Rating
                 name="simple-controlled"
@@ -186,11 +281,10 @@ export default function Main() {
             </Box>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Costumer
+              <Avatar alt="lemy Sharp" src="/static/images/avatar/1.jpg" />liam
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                rerum eligendi aliquam pariatur amet fugit velit, qui
+                Amazing food , really great services too, stright forward design i must say
               </Typography>
             </CardContent>
           </Card>

@@ -12,11 +12,12 @@ function App() {
     
  <><Data>
    <Routes>
-    <Route path='/' element={   <Home/>}></Route>
+    <Route path='/' element={ <Home/>  }></Route>
     <Route path='/reservation' element={   <BookingForm/>}></Route>
     <Route path='/login' element={   <Formm/>}></Route>
 
    </Routes>
+   
   </Data>
    </>
   
